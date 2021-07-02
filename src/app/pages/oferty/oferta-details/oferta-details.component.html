@@ -1,0 +1,38 @@
+<div class="row" *ngIf="ofertaDetails | async as oferta">
+  <div class="col s4"><img [src]="oferta.photo_path" /></div>
+  <table class="col s8">
+    <tbody>
+      <tr>
+        <td>Title</td>
+        <td>{{ oferta.title }}</td>
+      </tr>
+      <tr>
+        <td>New or Used</td>
+        <td>{{ oferta.stan }}</td>
+      </tr>
+      <tr>
+        <td>Offer Category</td>
+        <td>{{ oferta.category }}</td>
+      </tr>
+      <tr>
+        <td>Attributes</td>
+        <td>{{ oferta.attributes }}</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>{{ oferta.description }}</td>
+      </tr>
+      <tr>
+        <td>City</td>
+        <td>{{ oferta.city }}</td>
+      </tr>
+      <tr>
+        <td>Rating of Users</td>
+        <td>{{ oferta.rating_of_users }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn black" (click)="goToOferty()">Back</button>
+  <button class="btn blue-grey" (click)="goToOferty()">Chose</button>
+  <button class="btn green" (click)="goToOferty()">Acept</button>
+</div>

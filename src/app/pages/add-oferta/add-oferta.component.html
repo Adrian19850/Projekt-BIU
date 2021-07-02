@@ -1,0 +1,117 @@
+<div class="grid">
+  <form (ngSubmit)="send()" class="container" #form="ngForm">
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.title"
+          id="title"
+          name="title"
+          type="text"
+          required
+          minlength="2"
+          #title="ngModel"
+          (input)="printModel(title)"
+        />
+        <label for="title">Title</label>
+        <ng-container *ngIf="title.invalid && title.touched">
+          <div class="card-panel red darken-1" *ngIf="title.errors.required">
+            Field required
+          </div>
+          <div class="card-panel red darken-1" *ngIf="title.errors.minlength">
+            Text is to short
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select
+          class="browser-default"
+          [(ngModel)]="model.stan"
+          name="year"
+          required
+        >
+          <option *ngFor="let stan of stans" [ngValue]="stan">{{
+            stan
+          }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select
+          class="browser-default"
+          [(ngModel)]="model.category"
+          name="category"
+          required
+        >
+          <option *ngFor="let category of categories" [ngValue]="category">{{
+            category
+          }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.attributes"
+          id="attributes"
+          name="attributes"
+          type="text"
+          required
+        />
+        <label for="attributes">Attributes</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.description"
+          id='description'
+          name="description"
+          type="text"
+          required
+        />
+        <label for='description'>Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.city"
+          id="city"
+          name="city"
+          type="text"
+          required
+        />
+        <label for="city">City</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.rating_of_users"
+          id="rating_of_users"
+          name="rating_of_users"
+          type="text"
+          required
+        />
+        <label for="rating_of_users">Rating Of Users</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.photo_path"
+          id="photo_path"
+          name="photo_path"
+          type="text"
+          required
+        />
+        <label for="photo_path">Photo Path</label>
+      </div>
+    </div>
+    <button class="btn-small" type="submit" [disabled]="form.invalid">Send</button>
+    <button class="btn-small red" type="reset">Reset</button>
+  </form>
+</div>

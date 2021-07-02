@@ -1,0 +1,37 @@
+img {
+  width: 234px;
+  height: 348px;
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -5px;
+  width: auto;
+}
+.grid__item {
+  max-width: 234px;
+  padding: 0 5px;
+}
+
+.card-content {
+  min-height: 180px;
+}
+
+.card-title {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-decoration-width: auto;
+}

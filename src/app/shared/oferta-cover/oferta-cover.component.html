@@ -1,0 +1,14 @@
+<div class="grid__item">
+  <div class="card">
+    <div class="card-image">
+      <img [src]="oferta.photo_path" />
+      <span class="card-title black">{{ oferta.title }}</span>
+    </div>
+    <div class="card-content">
+      <p>{{ oferta.description.slice(0, 100) }}...</p>
+    </div>
+     <div class="card-action">
+      <a class="black-text" [routerLink]="['/oferta', oferta.id]">More >></a>
+    </div>
+  </div>
+</div>
